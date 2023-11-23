@@ -1,29 +1,30 @@
-const sumAll = function(num1, num2) {
-    // create variable to hold the error message
-    // create  variables to find the lowest and highest number of the given two numbers
-    // create a variable to add the sum for each iteration
-    // using if, check if the type of arguments is not equal to number, if thats true then return the error message
-    // also check if the arguments are less than zero, if it is, then return error message
-    // now use for loop to loop between the two arguments.
-    // for each iteration, add the number to the sum variable, when loop ends, return the sum variable
-   let error = "ERROR"
-   let smallest = Math.min(num1, num2)
-   let largest = Math.max(num1, num2)
-   let sum =0
+//use if to check for type of the arguments passed into the function and to check if the numbers is less than zero.
+//create a variable to hold the sum
+//create two variables to hold smallest and biggest bumber with Math.min and Math.max so that whatever the order they are passed in, sum will be calculated.
+//use for loop to iterate between the given two numbers and add the value of i to sum, then return sum.
 
-  
-        if ((typeof num1 !== "number") || (typeof num2 !== "number")) {
-            return error
-        } else if ((smallest < 0) || (largest < 0)) {
-            return error
-        } else {
-            for(let i = smallest; i <= largest; i++) {
-                sum = sum + i
-            }
-        }
-    console.log(sum)
-    return sum
-};
+
+const sumAll = function (num1, num2) {
+    
+    if (typeof num1 !== 'number' || typeof num2!== 'number') {
+        return 'ERROR';
+    }
+    if (num1 < 0 || num2 < 0) {
+        return 'ERROR';
+    }
+
+    let sum = 0;
+    let smallest = Math.min(num1, num2);
+    let biggest = Math.max(num1, num2);
+
+    for (let i = smallest; i <= biggest; i++) {
+        sum += i;
+    };
+
+   return sum;
+}
+
+
 
 // Do not edit below this line
 module.exports = sumAll;
